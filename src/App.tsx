@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Home from './routes/home';
+import Posts from './routes/posts';
+import Post from './routes/post';
+import { AppContextProvider } from './contexts/appContext';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const message = 'Hello from';
+
+    return (
+        <AppContextProvider>
+            <Routes>
+                <Route path="/" element={<Home message={message} />} />
+                <Route path="/posts" element={<Posts message={message} />} />
+                <Route path="/post/:post_id" element={<Post message={message} />} />
+            </Routes>
+        </AppContextProvider>
+    );
+};
 
 export default App;

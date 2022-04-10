@@ -1,0 +1,18 @@
+#home {
+    background-color: #333;
+    min-height: 100vh;
+    font-size: 20px;
+    img {
+        &.logo-img {
+            width: 100%;
+            max-width: 200px;
+        }
+    }
+    a {
+        color: $q-green;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
